@@ -27,13 +27,12 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
     <head>
         <meta charset="UTF-8">
         <title>Contato - Full Stack Eletro</title>
-        <link rel="icon" href="img/bts.png">
+        <link rel="icon" href="imagem/bts.png">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     </head>
   
     <body>
-    <div class="container">  
            <!--Menu-->
       
 <?php
@@ -46,7 +45,7 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
         </header>
 
        <hr>
-</div>
+
 
 <div class="container">
       <section class="contato row">
@@ -83,44 +82,39 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
  <?php
  $sql = "select * from comentarios";
  $result = $conn->query($sql);
+ ?>
+   <div style="border:4px solid red">
+
+ <?php
 
  if ($result->num_rows>0){
+
+
      while($rows = $result->fetch_assoc()){
-   echo $rows['msg'],"<br>";
-     ?>
 
- 
-<span>Nome:</span>
-  <?php 
-     echo $rows['nome'];
-
-   ?>
-   
-   <span>Data:</span>
-  <?php 
-     echo $rows['data'];
-
-     echo "<hr>";    
-
-     }
   
+   echo $rows['msg'],"<br>";
+    
+   echo $rows['nome'];
+
+   echo $rows['data'];
+
+   echo "<hr>";    
+     } 
+     
 }
-
-
 
 else{
   echo "Nenhum comentário ainda!";
 }
+
  ?>
 
 
- 
- <div>
-
-
-
-
 </div>
+
+
+
 
 
 <div class="container">

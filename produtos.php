@@ -3,7 +3,12 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "minhaloja";
+$database = "fseletro";
+
+/*$servername = "sql313.epizy.com";
+$username = "epiz_27423245";
+$password = "9VnIa8c2ahO";
+$database = "epiz_27423245_fseletro"; */
 
 $conn = mysqli_connect($servername,$username,$password,$database);
 
@@ -19,36 +24,40 @@ if(!$conn){
     <head>
         <meta charset="UTF-8">
         <title>Produtos - Full Stack Eletro</title>
-        <link rel="icon" href="img/bts.png">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="icon" href="imagem/bts.png">
+        <link rel="stylesheet" href="./css/css.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <script src="./js/funcoes.js"></script>
+        <script src="./js/funcao.js"></script>
     </head>
   
     <body>
         
   <!--Menu-->
- <div class="container">
+
 <?php
   include('menu.html');
 ?>
-</div>
+
  <!-- Fim Menu-->
- <div class="container">
+ <div class="container-fluid">
    <header>
        <h2 class="display-4 text-danger">Produtos</h2>
    </header>
        <hr>
 
-       <section class="categorias">
-                <h3>Categorias</h3>
-                <ol class="list-group">
-                       <li class="list-group-item list-group-item-danger" onclick="exibir_todos()">Todos (12)</li>
-                       <li class="list-group-item list-group-item-danger"  onclick="exibir_categoria('blusa')">Blusas</li>
-                       <li class="list-group-item list-group-item-danger"  onclick="exibir_categoria('saia')">Saias</li>
-                       <li class="list-group-item list-group-item-danger"  onclick="exibir_categoria('jardineira')">Jardineiras</li>
-                       <li class="list-group-item list-group-item-danger"  onclick="exibir_categoria('jaqueta')">Jaqueta</li>
-                       <li class="list-group-item list-group-item-danger"  onclick="exibir_categoria('diversos')">diversos</li>
+       <section class="categorias mt-2">
+               
+                <ol class="list-group"> 
+                    <li class="list-group-item list-group-item-danger" onclick="exibir_todos()">Todos (18)</li>
+                    <li class="list-group-item list-group-item-danger" onclick="exibir_categoria('jardineira')">Jardineiras</li>
+                    <li class="list-group-item list-group-item-danger" onclick="exibir_categoria('blusa')">Blusas</li>
+                    <li class="list-group-item list-group-item-danger" onclick="exibir_categoria('saia')">Saias</li>
+                    <li class="list-group-item list-group-item-danger" onclick="exibir_categoria('jaqueta')">Jaquetas</li>
+                    <li class="list-group-item list-group-item-danger" onclick="exibir_categoria('vestido')">Vestidos</li>
+                    <li class="list-group-item list-group-item-danger" onclick="exibir_categoria('calca')">Calças</li>
+                    <li class="list-group-item list-group-item-danger" onclick="exibir_categoria('sapato')">Sapatos</li>
+                    <li class="list-group-item list-group-item-danger" onclick="exibir_categoria('moletom')">Moletons</li>
+                    <li class="list-group-item list-group-item-danger" onclick="exibir_categoria('diverso')">Diversos</li>
                    </ol>
         </section>
   
@@ -64,7 +73,7 @@ if(!$conn){
  ?>       
  
    <div class="box_produto mb-4" id="<?php echo $rows["categoria"]; ?>">
-   <img class="itens img-fluid" src="<?php echo $rows["imagem"]; ?>" width="120px" onmouseover="destaque(this)"
+   <img class="itens img-fluid"  src="<?php echo $rows["imagem"]; ?>" onmouseover="destaque(this)"
    onmouseout="destaque(this)">
    <br>
    <p class="descricao"><?php echo $rows["descricao"]; ?></p>

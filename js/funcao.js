@@ -25,13 +25,13 @@ function exibir_categoria(categoria){
   
   };
   
-  let destaque = (imagem) => {
+
+ let destaque = (imagem) => {
       console.log(imagem);
-      if(imagem.width == 200 )
-         imagem.width =120;
+      if(imagem.width == 180 )
+         imagem.width =220;
         
       else
-      imagem.width = 200;
+      imagem.width = 180;
       
   }
-  

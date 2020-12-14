@@ -3,29 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <title>Loja da Thay</title>
-        <link rel="icon" href="img/bts.png">
+        <link rel="icon" href="imagem/bts.png">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     </head>
   
     <body>
+
        <!--Menu-->
- <div class="container">
+ 
 <?php
   include('menu.html');
 ?>
 </div>
  <!-- Fim Menu-->
- <div class="container">
- <div class="jumbotron bg-light text-white">
-     <main id="principal">
-        <h2 class="display-4">Lojinha da Thay</h2>
-        <p>Aqui em nossa loja, <strong>Kpops</strong> tem desconto!</p>
 
-    
-        <div class="container"><!--Container -->
+ 
+
+  
+        <div class="container-flud"><!--Container -->
       <div class="row"><!--Row -->
-        <div class="col-sm-8 m-auto"><!--col-sm8 -->       
+        <div class="col-sm-12 m-auto"><!--col-sm8 -->       
 
           
 <div id="carousel-controles2" class="carousel slide" data-ride="carousel"> 
@@ -38,20 +36,21 @@
 
   <div class="carousel-inner">
     <div class="carousel-item active">
-     <img src="img/primeiro.jpg" class="img-fluid">
+     <img src="imagem/primeiro.jpg" width="1200" class="img-fluid">
      <div class="carousel-caption">
-      <h3  class="text-dark display-4"><b>30% de desconto para fãs de Blackpink</b></h3>
+      <h3  class="text-dark display-4 mb-5"><b>30% de desconto para fãs de Blackpink</b></h3>
+      <button class="btn btn-danger btn-lg" type="button">Veja meus produtos !</button>
      </div>
     </div>
 
     <div class="carousel-item ">
-      <img src="img/segundo2.jpg" class="img-fluid">
+      <img src="imagem/segundo2.jpg" width="1200" class="img-fluid">
  
      </div>
 
 
      <div class="carousel-item ">
-      <img src="img/terceiro3.jpg" class="img-fluid">
+      <img src="imagem/terceiro3.jpg" width="1200" class="img-fluid">
      </div>
 
   </div>
@@ -68,9 +67,7 @@
   </div><!--/col-sm8 -->
       </div><!--/Row -->
     </div><!--/Container -->  
-
-</main>
-
+  
 
 </div>
 
@@ -82,7 +79,7 @@
 </footer>
 </div> 
 
-</div>
+
 
 
 

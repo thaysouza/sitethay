@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <title>Nossas lojas - Full Stack Eletro</title>
-        <link rel="icon" href="img/bts.png">
+        <link rel="icon" href="imagem/bts.png">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     </head>
   
     <body>
            <!--Menu-->
- <div class="container">       
+      
 <?php
   include('menu.html');
 ?>
@@ -20,7 +20,7 @@
             <h2 class="display-4">Nossas Lojas</h2>
         </header>
        <hr>
- </div>
+
  <div class="container">
     
      <section id="lojas">

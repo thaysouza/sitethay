@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "thay";
+$password = "tayane15";
 $database = "fseletro";
 
 /*$servername = "sql313.epizy.com";

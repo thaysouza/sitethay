@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26-Out-2020 às 01:32
+-- Tempo de geração: 18-Dez-2020 às 16:04
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.6
 
@@ -20,6 +20,97 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `fseletro`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para vista `coment`
+-- (Veja abaixo para a view atual)
+--
+CREATE TABLE `coment` (
+`msg` varchar(300)
+,`nome` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) DEFAULT NULL,
+  `msg` varchar(300) DEFAULT NULL,
+  `data` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `comentarios`
+--
+
+INSERT INTO `comentarios` (`id`, `nome`, `msg`, `data`) VALUES
+(9, 'thay souza', 'Roupas lindas e de ótima qualidade, chegaram antes do prazo !!!', '2020-11-02 23:31:11');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `escolha`
+--
+
+CREATE TABLE `escolha` (
+  `idproduto` int(11) NOT NULL,
+  `idtipos` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `escolha`
+--
+
+INSERT INTO `escolha` (`idproduto`, `idtipos`) VALUES
+(1, 3),
+(2, 1),
+(3, 3),
+(4, 1),
+(5, 2),
+(6, 1),
+(7, 2),
+(8, 1),
+(9, 2),
+(10, 3),
+(11, 1),
+(12, 3),
+(13, 3),
+(14, 1),
+(10, 1),
+(11, 3),
+(12, 1),
+(13, 2),
+(14, 3),
+(15, 1),
+(16, 1),
+(17, 3),
+(18, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `opcao`
+--
+
+CREATE TABLE `opcao` (
+  `idtipos` int(11) NOT NULL,
+  `tipo` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `opcao`
+--
+
+INSERT INTO `opcao` (`idtipos`, `tipo`) VALUES
+(1, 'P'),
+(2, 'M'),
+(3, 'G');
 
 -- --------------------------------------------------------
 
@@ -65,8 +156,8 @@ CREATE TABLE `produtos` (
   `categoria` varchar(50) NOT NULL,
   `descricao` varchar(255) NOT NULL,
   `imagem` varchar(255) NOT NULL,
-  `preco` float NOT NULL,
-  `precofinal` float NOT NULL
+  `preco` decimal(7,2) NOT NULL,
+  `precofinal` decimal(7,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -74,22 +165,57 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`idproduto`, `categoria`, `descricao`, `imagem`, `preco`, `precofinal`) VALUES
-(1, 'Geladeira', 'Geladeira Frost Free Brastemp Side Inverse 540 litros', './img/geladeira1.jpeg', 6389, 5019),
-(2, 'Geladeira', 'Geladeira Frost Free Brastemp Branca 375 litros', './img/geladeira2.jpeg', 2068.6, 1910.9),
-(3, 'Geladeira', 'Geladeira Frost Free Consul Prata 340 litros', './img/geladeira3.jpeg', 2199.9, 2069),
-(4, 'Fogão', 'Fogão 4 Bocas Consul Inox com mesa de Vidro', './img/fogao1.jpeg', 1200, 1129),
-(5, 'Fogão', 'Fogão de Piso 4 Bocas Atlas Monaco com Acendimento Automâtico', './img/fogao2.jpeg', 600, 519.7),
-(6, 'Microodas', 'Micro-ondas Consul 32 Litros Inox 220V', './img/microondas1.jpeg', 580, 409.88),
-(7, 'Microodas', 'microondas 25L Espelhado Philco 220V', './img/microondas2.jpeg', 508.7, 464.53),
-(8, 'Microodas', 'Forno Microondas Electrolux 20L Branco', './img/microondas3.jpeg', 549, 436.05),
-(9, 'Lava-louças', 'Lava-louças Electrolux Inox com 10 Serviços', './img/lava louças1.jpeg', 3599, 2799.9),
-(10, 'Lava-louças', 'Lava louça Compacta 8 Serviços Branca 127V Brastemp', './img/lava louças2.jpeg', 1970.5, 1730.61),
-(11, 'Lavadora', 'Lavadora de Roupas Brastemp 11kg com Turbo Performance Branca', './img/maquina1.jpeg', 1699, 1214.1),
-(12, 'Lavadora', 'Lavadora de Roupas Philco Inverter 12KG', './img/maquina2.jpeg', 2399.9, 2179.9);
+(1, 'jardineira', 'Linda jardineira com 30 % de desconto na primeira compra.', './imagem/img1.jpg', '109.98', '99.99'),
+(2, 'jardineira', 'Linda jardineira com 30 % de desconto na primeira compra.', './imagem/img2.jpg', '89.99', '79.99'),
+(3, 'blusa', 'Linda blusa com 30 % de desconto na primeira compra.', './imagem/img3.png', '59.99', '49.99'),
+(4, 'blusa', 'Linda blusa com 30 % de desconto na primeira compr...', './imagem/img4.jpg', '65.00', '45.99'),
+(5, 'blusa', 'Linda blusa com 30 % de desconto na primeira compr...', './imagem/img5.jpg', '78.99', '68.99'),
+(6, 'saia', 'Linda saia com 30 % de desconto na primeira compr...', './imagem/img6.jpg', '89.99', '79.99'),
+(7, 'saia', 'Linda saia com 30 % de desconto na primeira compr...', './imagem/img7.jpg', '64.99', '54.99'),
+(8, 'saia', 'Linda saia com 30 % de desconto na primeira compr...', './imagem/img8.jpg', '89.99', '79.99'),
+(9, 'saia', 'Linda saia com 30 % de desconto na primeira compr...', './imagem/img9.jpg', '79.99', '69.99'),
+(10, 'jaqueta', 'Linda jaqueta com 30 % de desconto na primeira compr...', './imagem/img10.png', '159.99', '139.99'),
+(11, 'jaqueta', 'Linda jaqueta com 30 % de desconto na primeira compr...', './imagem/img11.jpg', '129.99', '109.99'),
+(12, 'vestido', 'Lindo vestido com 30 % de desconto na primeira compr...', './imagem/img12.jpg', '89.99', '79.99'),
+(13, 'vestido', 'Lindo vestido com 30 % de desconto na primeira compr...', './imagem/img13.jpg', '109.98', '99.99'),
+(14, 'calca', 'Linda calça com 30 % de desconto na primeira compr...', './imagem/img14.jpg', '89.99', '79.99'),
+(15, 'calca', 'Linda calça com 30 % de desconto na primeira compr...', './imagem/img15.jpg', '79.99', '69.99'),
+(16, 'sapato', 'Lindo sapato com 30 % de desconto na primeira compr...', './imagem/img16.png', '149.99', '139.99'),
+(17, 'diverso', 'Linda roupa com 30 % de desconto na primeira compr...', './imagem/img17.jpg', '79.99', '69.99'),
+(18, 'diverso', 'Linda roupa com 30 % de desconto na primeira compr...', './imagem/img18.jpg', '89.99', '79.99'),
+(19, 'moletom', 'Geladeira Frost Free Brastemp Side Inverse 540 litros', './imagem/img19.jpg', '6389.00', '5019.00');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para vista `coment`
+--
+DROP TABLE IF EXISTS `coment`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `coment`  AS  select `comentarios`.`msg` AS `msg`,`comentarios`.`nome` AS `nome` from `comentarios` ;
 
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `escolha`
+--
+ALTER TABLE `escolha`
+  ADD KEY `idproduto` (`idproduto`),
+  ADD KEY `idtipos` (`idtipos`);
+
+--
+-- Índices para tabela `opcao`
+--
+ALTER TABLE `opcao`
+  ADD PRIMARY KEY (`idtipos`);
 
 --
 -- Índices para tabela `pedidos`
@@ -108,6 +234,18 @@ ALTER TABLE `produtos`
 --
 
 --
+-- AUTO_INCREMENT de tabela `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+
+--
+-- AUTO_INCREMENT de tabela `opcao`
+--
+ALTER TABLE `opcao`
+  MODIFY `idtipos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de tabela `pedidos`
 --
 ALTER TABLE `pedidos`
@@ -117,7 +255,18 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `idproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `escolha`
+--
+ALTER TABLE `escolha`
+  ADD CONSTRAINT `escolha_ibfk_1` FOREIGN KEY (`idproduto`) REFERENCES `produtos` (`idproduto`),
+  ADD CONSTRAINT `escolha_ibfk_2` FOREIGN KEY (`idtipos`) REFERENCES `opcao` (`idtipos`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -2,9 +2,9 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>Loja da Thay</title>
+        <title>KoreanStore</title>
         <link rel="icon" href="imagem/bts.png">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/css.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     </head>
   
@@ -21,64 +21,32 @@
  
 
   
-        <div class="container-flud"><!--Container -->
-      <div class="row"><!--Row -->
-        <div class="col-sm-12 m-auto"><!--col-sm8 -->       
+ <div class="container-flud"><!--Container -->
+  
+          <div class="row">
+              <div class="col-lg-6">
+              <h2 class="text-danger display-4"><b>Korean</b>Store</h2>
+                </div>
 
-          
-<div id="carousel-controles2" class="carousel slide" data-ride="carousel"> 
-   
-  <ol class="carousel-indicators"> 
-   <li class="active" data-target="#carousel-controles1" data-slide-to="0"></li>
-   <li data-target="#carousel-controles1" data-slide-to="1"></li>
-   <li data-target="#carousel-controles1" data-slide-to="2"></li>
-  </ol>
+                <div class="col-lg-6 mt-4">
+                <a href="produtos.php"> 
+                <button class="btn btn-danger btn-lg mb-3" type="button">Veja nossos produtos !</button>
+                </a>
+                 </div>
 
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-     <img src="imagem/primeiro.jpg" width="1200" class="img-fluid">
-     <div class="carousel-caption">
-      <h3  class="text-dark display-4 mb-5"><b>30% de desconto para fãs de Blackpink</b></h3>
-      <button class="btn btn-danger btn-lg" type="button">Veja meus produtos !</button>
-     </div>
-    </div>
+            
+              <div class="container-fluid col-sm-12">
+              <img class="img-fluid"  src="imagem/estilo-coreano.jpg"  alt="Moda-Coreana"/>
+             </div>
+         </div>
 
-    <div class="carousel-item ">
-      <img src="imagem/segundo2.jpg" width="1200" class="img-fluid">
- 
-     </div>
-
-
-     <div class="carousel-item ">
-      <img src="imagem/terceiro3.jpg" width="1200" class="img-fluid">
-     </div>
-
-  </div>
-
-  <a href="#carousel-controles2" class="carousel-control-prev" data-slide="prev">
-    <span class="carousel-control-prev-icon"> </span>
-  </a>
-
-  <a href="#carousel-controles2" class="carousel-control-next" data-slide="next">
-    <span class="carousel-control-next-icon"> </span>
-  </a>
-  </div>
-
-  </div><!--/col-sm8 -->
-      </div><!--/Row -->
-    </div><!--/Container -->  
   
 
 </div>
 
-<div class="container">
-  <footer id="rodape">
-  <h5 class="text-danger"><b>Formas de pagamento:</b></h5>
-    <img src="./img/forma-pagamento.png" alt="Formas de pagamento" width="350px" height="45px"><!--arrumar isso-->
-    <p class="text-dark"><b>Todos os direitos reservados - Thay Souza</b></p>
-</footer>
-</div> 
-
+<?php
+  include('rodape.html');
+?>
 
 
 

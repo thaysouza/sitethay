@@ -2,9 +2,9 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>Nossas lojas - Full Stack Eletro</title>
+        <title>KoreanStore</title>
         <link rel="icon" href="imagem/bts.png">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/css.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     </head>
   
@@ -17,7 +17,7 @@
          <!-- Fim Menu-->
                
          <header>
-            <h2 class="display-4">Nossas Lojas</h2>
+            <h2 class="display-4 text-danger">Nossas Lojas</h2>
         </header>
        <hr>
 
@@ -55,13 +55,9 @@
 
 </div>
 
-<div class="container">
-  <footer id="rodape">
-  <h5 class="text-danger"><b>Formas de pagamento:</b></h5>
-    <img src="./img/forma-pagamento.png" alt="Formas de pagamento" width="350px" height="45px"><!--arrumar isso-->
-    <p>&copy; Recode Pro</p>
-</footer>
-</div>
+<?php
+  include('rodape.html');
+?>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

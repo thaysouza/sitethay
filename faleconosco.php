@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "thay";
+$password = "tayane15";
 $database = "fseletro";
 
 $conn = mysqli_connect($servername,$username,$password,$database);
@@ -41,20 +41,22 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
          <!-- Fim Menu-->
 
          <header>
-            <h2 class="display-4 text-danger">Deixe um elogio aqui :)</h2>
+            <h2 class="display-5 text-danger">Deixe aqui seu comentário :) </h2>
         </header>
 
        <hr>
 
+<section class="comentario row"> <!--row total-->
+<div class=" col-ms-4 text-center "> <!--parte 1-->
 
-<div class="container">
+<div class="container ">
       <section class="contato row">
            <div class="logo col-ms-4 text-center">
             <img src="./imagem/logo-email.png" width="40px">
               contato@koreanstore.com
            </div>   
 
-           <div class="logo col-ms-4 text-center">
+           <div class="logo col-ms-4 text-center mr-5">
             <img src="./imagem/whatsapp-icone-4.png" width="45px">
                 (11) 9999-9999
         </div>
@@ -74,11 +76,12 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
 
     </div>
   </form>
+<!--fim parte 1--> 
+</div>
 
-  <h2 class="text-danger" style="text-align: center; margin-top:50px;">Depoimentos</h2>
+<div class=" col-ms-6 text-center" style="border-radius:20px;border: dashed 5px pink; height:450px; width:450px; background-color: rgba(233, 86, 184,0.2);"> <!--parte 2-->
 
 
-  <section class="comentarios">
  <?php
  $sql = "select * from coment";
  $result = $conn->query($sql);
@@ -87,8 +90,8 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
 while($rows = $result->fetch_assoc()){
  ?>
 
-<div class="depoimentos">
- <p ><?php echo $rows["msg"]; ?> </p>
+<div>
+ <p style="text-align: center; margin:30px;"><?php echo $rows["msg"]; ?> </p>
  <p>Nome : <?php echo $rows["nome"]; ?> </p>
  <hr>
  <div>
@@ -103,8 +106,8 @@ else{
 }
 
  ?>
-
-</section>
+<div> <!--fim parte 2-->
+</section><!--fim row total-->
 
 <?php
   include('rodape.html');

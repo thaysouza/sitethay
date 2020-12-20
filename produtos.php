@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "thay";
+$password = "tayane15";
 $database = "fseletro";
 
 /*$servername = "sql313.epizy.com";
@@ -64,12 +64,7 @@ if(!$conn){
         <section class="produtos">
 
  <?php
- $sql = "SELECT * FROM produtos as p
- join escolha as e
- on p.idproduto = e.idproduto
- join opcao as o
- on o.idtipos = e.idtipos
- GROUP BY imagem";
+ $sql = "SELECT * FROM produtos";
 
  $result = $conn->query($sql);
  

@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "thay";
-$password = "tayane15";
+$username = "root";
+$password = "";
 $database = "fseletro";
 
 $conn = mysqli_connect($servername,$username,$password,$database);
@@ -41,7 +41,7 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
          <!-- Fim Menu-->
 
          <header>
-            <h2 class="display-4 text-danger">Fale Conosco</h2>
+            <h2 class="display-4 text-danger">Deixe um elogio aqui :)</h2>
         </header>
 
        <hr>
@@ -78,17 +78,16 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
   <h2 class="text-danger" style="text-align: center; margin-top:50px;">Depoimentos</h2>
 
 
-
+  <section class="comentarios">
  <?php
  $sql = "select * from coment";
  $result = $conn->query($sql);
 
  if ($result->num_rows>0){
-
-
-     while($rows = $result->fetch_assoc()){
+while($rows = $result->fetch_assoc()){
  ?>
-<div class="container">
+
+<div class="depoimentos">
  <p ><?php echo $rows["msg"]; ?> </p>
  <p>Nome : <?php echo $rows["nome"]; ?> </p>
  <hr>
@@ -105,7 +104,7 @@ else{
 
  ?>
 
-
+</section>
 
 <?php
   include('rodape.html');
